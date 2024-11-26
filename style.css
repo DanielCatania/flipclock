@@ -1,21 +1,27 @@
 :root {
-  --card-width: 60px;
-  --card-height: 90px;
-  --space-between-cards: 20px;
+  --card-width: calc(100vw/10);
+  --card-height: calc(100vw/6.7);
+  --space-between-cards: calc(100vw/30);
+  --font-size-clock: calc(100vw/9.375);
+  --divider-height: calc(100vw/300);
+  --background: #262626;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #383838;
+  background-color: var(--background);
   color: #ccc;
 
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  box-sizing: border-box;
 }
 
 .container {
   height: 100vh;
 
-  font-size: 5em;
+  font-size: var(--font-size-clock);
 
   display: flex;
   align-items: center;
@@ -44,7 +50,6 @@ body {
 .card {
   width: var(--card-width);
   height: var(--card-height);
-  padding: 5px;
   background-color: rgba(34, 34, 34, 0.6);
 
   position: relative;
@@ -78,16 +83,16 @@ body {
 
 .card::before {
   content: "";
-  z-index: -1;
+  z-index: 1;
 
   width: 100%;
-  height: 2px;
-  background-color: rgba(256, 256, 256, 0.9);
+  height: var(--divider-height);
+  background-color: var(--background);
 
   position: absolute;
 
   left: 0;
-  top: 45%;
+  top: 50%;
 }
 
 @keyframes flipdown {
