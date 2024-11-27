@@ -1,13 +1,6 @@
-import { closePopUp, openPopUp } from "../PopUp/index.js";
-import addsMouseVisibility from "../utils/addsMouseVisibility.js";
+import { closePopUp } from "../PopUp/index.js";
 import HandlerTime from "../HandlerTime/index.js";
 import TimerClock from "./index.js";
-
-const $createTimer = document.querySelector(".create_timer");
-
-$createTimer.addEventListener("click", openPopUp);
-
-addsMouseVisibility($createTimer);
 
 const $startTimer = document.querySelector(".start_timer");
 
