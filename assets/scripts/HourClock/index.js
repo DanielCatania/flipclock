@@ -1,6 +1,7 @@
+import ClockTypeInterface from "../ClockTypeManager/interface.js";
 import HandlerTime from "../HandlerTime/index.js";
 
-class HourClock {
+class HourClock extends ClockTypeInterface {
   static getTime() {
     const date = new Date();
 

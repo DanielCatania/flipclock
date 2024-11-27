@@ -1,13 +1,14 @@
 import ClockService from "./assets/scripts/Clock/index.js";
 import FlipAnimation from "./assets/scripts/FlipAnimation/index.js";
-import HourClock from "./assets/scripts/HourClock/index.js";
+import ClockTypeManager from "./assets/scripts/ClockTypeManager/index.js";
 
 const clock = new ClockService();
+const manager = new ClockTypeManager();
 
 function App() {
   const timeInMemory = clock.getTime();
 
-  const time = HourClock.getTime();
+  const time = manager.clock.getTime();
   clock.setTime(time);
 
   ClockService.updateClock(time, timeInMemory);
