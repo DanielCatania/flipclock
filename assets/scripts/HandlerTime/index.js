@@ -41,6 +41,17 @@ class HandlerTime {
 
     return newTime;
   }
+
+  static timeInSeconds(time) {
+    const seconds = parseInt(time[2]);
+    const minutes = parseInt(time[1]);
+    const hours = parseInt(time[0]);
+
+    const minutesInSeconds = minutes / 60;
+    const hoursInSeconds = hours / 60 ** 2;
+
+    return seconds + minutesInSeconds + hoursInSeconds;
+  }
 }
 
 export default HandlerTime;
