@@ -8,3 +8,12 @@ body {
 
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.invisible {
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1 !important;
+}

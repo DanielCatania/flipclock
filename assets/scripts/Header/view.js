@@ -7,6 +7,12 @@ const HeaderStyle = () => `
 
       display: flex;
       justify-content: center;
+      
+      width: 100%
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
     }
 
     header nav {
@@ -43,15 +49,15 @@ const HeaderStyle = () => `
     }
 
     header button:hover {
-      font-size: 1.1em;
-      transition: 1s;
-      color: red;
+      font-size: 18px;
+      transition: 0.5s;
+      color: #b56d5b;
     }
   </style>
 `;
 
 const Header = () => `
-  <header>
+  <header class="invisible">
     <nav>
       <button>Relógio</button> 
       <button>Timer</button> 
@@ -64,3 +70,13 @@ const $body = document.querySelector("body");
 
 addStyle(HeaderStyle);
 $body.innerHTML = Header() + $body.innerHTML;
+
+const header = document.querySelector("header");
+
+let time;
+document.addEventListener("mousemove", () => {
+  header.classList.add("visible");
+
+  if (time) clearTimeout(time);
+  time = setTimeout(() => header.classList.remove("visible"), 3000);
+});
