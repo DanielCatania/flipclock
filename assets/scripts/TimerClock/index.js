@@ -18,33 +18,11 @@ export default class TimerClock extends ClockTypeInterface {
       return this.time;
     }
 
-    let [hours, minutes, seconds] = this.time.map((unit) => parseInt(unit));
-
-    if (seconds > 0) {
-      seconds--;
-    } else {
-      seconds = 59;
-      if (minutes > 0) {
-        minutes--;
-      } else {
-        minutes = 59;
-        if (hours > 0) {
-          hours--;
-        } else {
-          hours = minutes = seconds = 0;
-        }
-      }
-    }
-
-    const newTime = [
-      HandlerTime.formatTime(hours),
-      HandlerTime.formatTime(minutes),
-      HandlerTime.formatTime(seconds),
-    ];
+    const newTime = HandlerTime.timeDecrease(this.time);
 
     this.time = newTime;
 
-    if (((hours === minutes) === seconds) === 0) {
+    if (((this.time[0] === this.time[1]) === this.time[2]) === "00") {
       this.setInitialTime(null);
     }
 

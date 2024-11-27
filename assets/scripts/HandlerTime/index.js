@@ -13,6 +13,34 @@ class HandlerTime {
 
     return differents;
   }
+
+  static timeDecrease(time) {
+    let [hours, minutes, seconds] = time.map((unit) => parseInt(unit));
+
+    if (seconds > 0) {
+      seconds--;
+    } else {
+      seconds = 59;
+      if (minutes > 0) {
+        minutes--;
+      } else {
+        minutes = 59;
+        if (hours > 0) {
+          hours--;
+        } else {
+          hours = minutes = seconds = 0;
+        }
+      }
+    }
+
+    const newTime = [
+      HandlerTime.formatTime(hours),
+      HandlerTime.formatTime(minutes),
+      HandlerTime.formatTime(seconds),
+    ];
+
+    return newTime;
+  }
 }
 
 export default HandlerTime;
