@@ -23,7 +23,7 @@ const HeaderStyle = () => `
       justify-content: space-between;
     }
 
-    header button {
+    header a {
       background: none;
       border: none;
       color: #ccc;
@@ -33,7 +33,7 @@ const HeaderStyle = () => `
       cursor: pointer;
     }
 
-    header button::after, header button::before{
+    header a::after, header a::before{
       content: "";
       position: absolute;
 
@@ -45,11 +45,11 @@ const HeaderStyle = () => `
 
     }
 
-    header button::before {
+    header a::before {
       left: -8px;
     }
 
-    header button:hover {
+    header a:hover {
       font-size: 18px;
       transition: 0.5s;
       color: #b56d5b;
@@ -60,9 +60,9 @@ const HeaderStyle = () => `
 const HeaderView = () => `
   <header class="invisible">
     <nav>
-      <button>Relógio</button> 
-      <button>Timer</button> 
-      <button>Pomodoro</button>
+      <a href="./">Relógio</a> 
+      <a href="./timer.html">Timer</a> 
+      <a href="./pomodoro.html">Pomodoro</a>
     </nav>
   </header>
 `;
