@@ -1,4 +1,5 @@
 import addStyle from "../utils/addStyle.js";
+import addsMouseVisibility from "../utils/addsMouseVisibility.js";
 
 const HeaderStyle = () => `
   <style>
@@ -56,7 +57,7 @@ const HeaderStyle = () => `
   </style>
 `;
 
-const Header = () => `
+const HeaderView = () => `
   <header class="invisible">
     <nav>
       <button>Relógio</button> 
@@ -69,14 +70,8 @@ const Header = () => `
 const $body = document.querySelector("body");
 
 addStyle(HeaderStyle);
-$body.innerHTML = Header() + $body.innerHTML;
+$body.innerHTML = HeaderView() + $body.innerHTML;
 
-const header = document.querySelector("header");
+const $header = document.querySelector("header");
 
-let time;
-document.addEventListener("mousemove", () => {
-  header.classList.add("visible");
-
-  if (time) clearTimeout(time);
-  time = setTimeout(() => header.classList.remove("visible"), 3000);
-});
+addsMouseVisibility($header);
