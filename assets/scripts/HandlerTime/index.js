@@ -1,6 +1,6 @@
 class HandlerTime {
   static formatTime(time) {
-    return time.padStart(2, "0");
+    return String(time).padStart(2, "0");
   }
 
   static compareTimes(firstTime, secondTime) {
