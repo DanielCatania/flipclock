@@ -1,3 +1,5 @@
+import addStyle from "../utils/addStyle.js";
+
 const ClockStyle = () => `
   <style>
     :root {
@@ -130,8 +132,7 @@ const ClockView = () => `
   </div>
 `;
 
-const container = document.querySelector(".clock_container");
-const head = document.querySelector("head");
+const $container = document.querySelector(".clock_container");
 
-head.innerHTML = head.innerHTML + ClockStyle();
-container.innerHTML = ClockView();
+addStyle(ClockStyle);
+$container.innerHTML = ClockView();
