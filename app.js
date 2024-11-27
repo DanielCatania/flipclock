@@ -1,6 +1,6 @@
-import ClockService from "./components/Clock/index.js";
-import FlipAnimation from "./components/FlipAnimation/index.js";
-import HourClock from "./components/HourClock/index.js";
+import ClockService from "./assets/scripts/Clock/index.js";
+import FlipAnimation from "./assets/scripts/FlipAnimation/index.js";
+import HourClock from "./assets/scripts/HourClock/index.js";
 
 const clock = new ClockService();
 
