@@ -22,7 +22,7 @@ export default class TimerClock extends ClockTypeInterface {
 
     this.time = newTime;
 
-    if (((this.time[0] === this.time[1]) === this.time[2]) === "00") {
+    if (HandlerTime.timeInSeconds(newTime) === 0) {
       this.setInitialTime(null);
     }
 
