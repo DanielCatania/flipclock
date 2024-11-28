@@ -1,6 +1,5 @@
 import addStyle from "../utils/addStyle.js";
 import { closePopUp, openPopUp } from "./index.js";
-import addsMouseVisibility from "../utils/addsMouseVisibility.js";
 
 const PopUpStyle = () => `
   <style>
@@ -51,14 +50,6 @@ const PopUpStyle = () => `
       justify-content: center;
       align-items: center;
     }
-
-    .open_popup {
-      position: absolute;
-      bottom: 10%;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-    }
   </style>
 `;
 
@@ -83,7 +74,4 @@ const $closeButton = document.querySelector(".popup_close");
 $closeButton.addEventListener("click", closePopUp);
 
 const $openPopUpButton = document.querySelector(".open_popup");
-
 $openPopUpButton.addEventListener("click", openPopUp);
-
-addsMouseVisibility($openPopUpButton);

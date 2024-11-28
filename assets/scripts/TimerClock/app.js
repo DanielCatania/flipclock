@@ -21,4 +21,8 @@ $startTimer.addEventListener("click", (e) => {
 
   const $form = document.querySelector("form");
   $form.reset();
+
+  const $control = document.querySelector(".control");
+
+  if ($control) $control.innerHTML = "pause";
 });
