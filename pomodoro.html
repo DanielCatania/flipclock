@@ -10,11 +10,67 @@
 </head>
 
 <body>
+  <div class="popup_container">
+    <form>
+      <fieldset class="time_fieldset">
+        <legend>Pomodoro:</legend>
+        <fieldset class="unit_fieldset">
+          <label for="hours">Horas:</label>
+          <input type="number" name="hours" id="pomodoro-hours" min="0" max="99" placeholder="0">
+        </fieldset>
+        <fieldset class="unit_fieldset">
+          <label for="minutes">Minutos:</label>
+          <input type="number" name="minutes" id="pomodoro-minutes" min="0" max="99" placeholder="0">
+        </fieldset>
+        <fieldset class="unit_fieldset">
+          <label for="seconds">Segundos:</label>
+          <input type="number" name="seconds" id="pomodoro-seconds" min="0" max="99" placeholder="0">
+        </fieldset>
+      </fieldset>
+      <fieldset class="time_fieldset">
+        <legend>Short Break:</legend>
+        <fieldset class="unit_fieldset">
+          <label for="hours">Horas:</label>
+          <input type="number" name="hours" id="short-break-hours" min="0" max="99" placeholder="0">
+        </fieldset>
+        <fieldset class="unit_fieldset">
+          <label for="minutes">Minutos:</label>
+          <input type="number" name="minutes" id="short-break-minutes" min="0" max="99" placeholder="0">
+        </fieldset>
+        <fieldset class="unit_fieldset">
+          <label for="seconds">Segundos:</label>
+          <input type="number" name="seconds" id="short-break-seconds" min="0" max="99" placeholder="0">
+        </fieldset>
+      </fieldset>
+      <fieldset class="time_fieldset">
+        <legend>Long Break:</legend>
+        <fieldset class="unit_fieldset">
+          <label for="hours">Horas:</label>
+          <input type="number" name="hours" id="long-break-hours" min="0" max="99" placeholder="0">
+        </fieldset>
+        <fieldset class="unit_fieldset">
+          <label for="minutes">Minutos:</label>
+          <input type="number" name="minutes" id="long-break-minutes" min="0" max="99" placeholder="0">
+        </fieldset>
+        <fieldset class="unit_fieldset">
+          <label for="seconds">Segundos:</label>
+          <input type="number" name="seconds" id="long-break-seconds" min="0" max="99" placeholder="0">
+        </fieldset>
+      </fieldset>
+
+      <button class="start_pomodoro">Iniciar Pomodoro</button>
+    </form>
+  </div>
   <main class="clock_container"></main>
+  <div class="controls">
+    <button class="open_popup invisible">Criar Pomodoro</button>
+  </div>
 </body>
 
 <script src="./assets/scripts/Header/view.js" type="module"></script>
 <script type="module" src="./assets/scripts/Clock/view.js"></script>
+<script type="module" src="./assets/scripts/PopUp/view.js"></script>
+<script type="module" src="./assets/scripts/PomodoroClock/app.js"></script>
 <script type="module" src="./app.js"></script>
 
 </html>
