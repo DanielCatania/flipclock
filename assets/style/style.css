@@ -25,9 +25,9 @@ button {
   font-size: 1.5em;
   border-radius: 10px;
 
-  width: 20%;
+  width: 40%;
   min-width: 100px;
-  max-width: 300px;
+  max-width: 250px;
 
   cursor: pointer;
 }
@@ -55,8 +55,34 @@ form {
   font-size: 22px;
 }
 
-fieldset {
+.unit_fieldset {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 5px;
+}
+
+.time_fieldset {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.time_fieldset legend {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+  button,
+  input,
+  label {
+    font-size: 1em;
+  }
+
+  input {
+    padding: 2px;
+    font-size: 1em;
+    width: 3em;
+  }
 }

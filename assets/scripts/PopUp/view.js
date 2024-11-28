@@ -41,11 +41,11 @@ const PopUpStyle = () => `
 
     .popup {
       width: 70vw;
-      height: 90vh;
+      height: 100vh;
       min-width: 200px;
 
       background-color: rgb(34, 34, 34);
-      padding: 5%;
+      padding: 1%;
 
       display: flex;
       justify-content: center;
