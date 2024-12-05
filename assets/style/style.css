@@ -136,3 +136,8 @@ form {
   margin: 10px;
   padding: 0;
 }
+
+p {
+  font-size: 22px;
+  text-transform: capitalize;
+}

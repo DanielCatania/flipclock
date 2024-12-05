@@ -10,13 +10,32 @@ export default class PomodoroClock extends ClockTypeInterface {
   static setTimes = null;
   static numberOfPomodoros = 0;
   static initial = true;
+  static $stageField = document.querySelector(".pomodoro_stage");
+
+  static changeStage() {
+    if (
+      this.currentStage === "shortBreak" ||
+      this.currentStage === "longBreak"
+    ) {
+      this.currentStage = "pomodoro";
+    } else {
+      this.numberOfPomodoros += 1;
+      this.currentStage =
+        this.numberOfPomodoros <= 3 ? "shortBreak" : "longBreak";
+    }
+
+    if (this.currentStage === "pomodoro")
+      this.$stageField.innerHTML = `${this.currentStage}: ${this.numberOfPomodoros}`;
+    else this.$stageField.innerHTML = this.currentStage;
+  }
 
   static setInitialTimes(times) {
     this.currentTime = times.pomodoro;
     this.currentStage = "pomodoro";
     this.setTimes = times;
-    this.numberOfPomodoros = 0;
+    this.numberOfPomodoros = 1;
     this.initial = true;
+    this.$stageField.innerHTML = `${this.currentStage}: ${this.numberOfPomodoros}`;
   }
 
   static getTime() {
@@ -35,17 +54,8 @@ export default class PomodoroClock extends ClockTypeInterface {
       Control.changeIsPaused(controlStatus);
       AudioControl.break();
       this.initial = true;
-      if (
-        this.currentStage === "shortBreak" ||
-        this.currentStage === "longBreak"
-      ) {
-        this.currentStage = "pomodoro";
-      } else {
-        this.numberOfPomodoros += 1;
-        console.log(this.numberOfPomodoros);
-        this.currentStage =
-          this.numberOfPomodoros <= 3 ? "shortBreak" : "longBreak";
-      }
+
+      this.changeStage();
 
       this.currentTime = this.setTimes[this.currentStage];
     }
