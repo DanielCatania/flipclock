@@ -1,5 +1,7 @@
+import { controlStatus } from "../../../app.js";
 import AudioControl from "../Audio/index.js";
 import ClockTypeInterface from "../ClockTypeManager/interface.js";
+import Control from "../Control/index.js";
 import HandlerTime from "../HandlerTime/index.js";
 
 export default class PomodoroClock extends ClockTypeInterface {
@@ -30,6 +32,7 @@ export default class PomodoroClock extends ClockTypeInterface {
     this.currentTime = newTime;
 
     if (HandlerTime.timeInSeconds(newTime) === 0) {
+      Control.changeIsPaused(controlStatus);
       AudioControl.break();
       this.initial = true;
       if (
