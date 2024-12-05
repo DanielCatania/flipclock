@@ -122,12 +122,8 @@ const UnitView = () => `
 
 const SeparatorView = () => `<div class="separator">:</div>`;
 
-const Audio = () =>
-  `<audio src="./assets/audio/flip.mp3" class="flip_audio"></audio>`;
-
 const ClockView = () => `
   <div class="clock">
-    ${Audio()}
     ${UnitView()}
     ${SeparatorView()}
     ${UnitView()}

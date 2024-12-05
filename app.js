@@ -9,15 +9,12 @@ window.onload = function () {
 
 const clock = new ClockService();
 const manager = new ClockTypeManager();
-export const controlStatus = new ControlStaus();
+export const controlStaus = new ControlStaus();
 let timeoutID;
-
-const flipAudio = document.querySelector(".flip_audio");
-flipAudio.volume = 0.4;
 
 export default function App() {
   clearTimeout(timeoutID);
-  const isPaused = controlStatus.getIsPaused();
+  const isPaused = controlStaus.getIsPaused();
   if (isPaused) return;
 
   const timeInMemory = clock.getTime();
@@ -28,8 +25,6 @@ export default function App() {
   ClockService.updateClock(time, timeInMemory);
 
   FlipAnimation.addAllAnimation(clock.time, timeInMemory);
-
-  flipAudio.play();
 
   timeoutID = setTimeout(App, 1000);
 }
