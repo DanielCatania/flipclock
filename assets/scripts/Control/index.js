@@ -1,14 +1,20 @@
 import App from "../../../app.js";
 
 export default class Control {
-  static changeIsPaused(controlStatus) {
-    const $controlElement = document.querySelector(".control");
+  static $controlElement = document.querySelector(".control");
 
+  static changeIsPaused(controlStatus) {
     controlStatus.setIsPaused(!controlStatus.getIsPaused());
 
     if (!controlStatus.getIsPaused()) App();
 
-    $controlElement.innerHTML = controlStatus.getIsPaused() ? "start" : "pause";
+    this.$controlElement.innerHTML = controlStatus.getIsPaused()
+      ? "start"
+      : "pause";
+  }
+
+  static disableControl() {
+    this.$controlElement.innerHTML = null;
   }
 }
 
