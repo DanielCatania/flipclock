@@ -1,3 +1,4 @@
+import AudioControl from "../Audio/index.js";
 import ClockTypeInterface from "../ClockTypeManager/interface.js";
 import HandlerTime from "../HandlerTime/index.js";
 
@@ -29,6 +30,7 @@ export default class PomodoroClock extends ClockTypeInterface {
     this.currentTime = newTime;
 
     if (HandlerTime.timeInSeconds(newTime) === 0) {
+      AudioControl.break();
       this.initial = true;
       if (
         this.currentStage === "shortBreak" ||

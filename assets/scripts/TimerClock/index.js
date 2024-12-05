@@ -1,3 +1,4 @@
+import AudioControl from "../Audio/index.js";
 import ClockTypeInterface from "../ClockTypeManager/interface.js";
 import HandlerTime from "../HandlerTime/index.js";
 
@@ -23,6 +24,7 @@ export default class TimerClock extends ClockTypeInterface {
     this.time = newTime;
 
     if (HandlerTime.timeInSeconds(newTime) === 0) {
+      AudioControl.break();
       this.setInitialTime(null);
     }
 
