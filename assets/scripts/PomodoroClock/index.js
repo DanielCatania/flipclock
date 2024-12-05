@@ -12,6 +12,11 @@ export default class PomodoroClock extends ClockTypeInterface {
   static initial = true;
   static $stageField = document.querySelector(".pomodoro_stage");
 
+  static updateNumberOfPomodoros() {
+    if (this.numberOfPomodoros === 4) this.numberOfPomodoros = 1;
+    else this.numberOfPomodoros += 1;
+  }
+
   static changeStage() {
     if (
       this.currentStage === "shortBreak" ||
@@ -19,9 +24,9 @@ export default class PomodoroClock extends ClockTypeInterface {
     ) {
       this.currentStage = "pomodoro";
     } else {
-      this.numberOfPomodoros += 1;
       this.currentStage =
-        this.numberOfPomodoros <= 3 ? "shortBreak" : "longBreak";
+        this.numberOfPomodoros === 4 ? "longBreak" : "shortBreak";
+      this.updateNumberOfPomodoros();
     }
 
     if (this.currentStage === "pomodoro")
