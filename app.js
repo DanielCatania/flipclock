@@ -2,6 +2,8 @@ import ClockService from "./assets/scripts/Clock/index.js";
 import FlipAnimation from "./assets/scripts/FlipAnimation/index.js";
 import ClockTypeManager from "./assets/scripts/ClockTypeManager/index.js";
 import { ControlStaus } from "./assets/scripts/Control/index.js";
+import AudioControl from "./assets/scripts/Audio/index.js";
+import HandlerTime from "./assets/scripts/HandlerTime/index.js";
 
 window.onload = function () {
   document.querySelector(".loading-overlay").style.display = "none";
@@ -25,6 +27,7 @@ export default function App() {
   ClockService.updateClock(time, timeInMemory);
 
   FlipAnimation.addAllAnimation(clock.time, timeInMemory);
+  if (HandlerTime.timeInSeconds(timeInMemory) !== 0) AudioControl.flip();
 
   timeoutID = setTimeout(App, 1000);
 }
