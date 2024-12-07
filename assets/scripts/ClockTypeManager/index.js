@@ -15,10 +15,10 @@ export default class ClockTypeManager {
 
   setClockType(type) {
     switch (type) {
-      case "/timer.html":
+      case "/timer/":
         this.clock = TimerClock;
         break;
-      case "/pomodoro.html":
+      case "/pomodoro/":
         this.clock = PomodoroClock;
         break;
       default:
