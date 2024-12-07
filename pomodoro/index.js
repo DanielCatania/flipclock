@@ -1,6 +1,6 @@
-import { closePopUp } from "../PopUp/index.js";
-import HandlerTime from "../HandlerTime/index.js";
-import PomodoroClock from "./index.js";
+import { closePopUp } from "../assets/components/PopUp/index.js";
+import HandlerTime from "../assets/scripts/HandlerTime/index.js";
+import PomodoroClock from "../assets/scripts/PomodoroClock/index.js";
 
 const $startPomodoro = document.querySelector(".start_pomodoro");
 

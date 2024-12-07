@@ -10,15 +10,18 @@ export default class ClockTypeManager {
   }
 
   getType() {
-    return window.location.pathname;
+    const type = window.location.pathname;
+    const formatedType = type.replace(/\//g, "");
+
+    return formatedType;
   }
 
   setClockType(type) {
     switch (type) {
-      case "/timer.html":
+      case "timer":
         this.clock = TimerClock;
         break;
-      case "/pomodoro.html":
+      case "pomodoro":
         this.clock = PomodoroClock;
         break;
       default:
