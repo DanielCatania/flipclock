@@ -14,6 +14,10 @@ const manager = new ClockTypeManager();
 export const controlStatus = new ControlStatus();
 let timeoutID;
 
+document
+  .querySelector(".sound_status")
+  .addEventListener("click", AudioControl.changeIsMute);
+
 export default function App() {
   clearTimeout(timeoutID);
   const isPaused = controlStatus.getIsPaused();

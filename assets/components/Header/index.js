@@ -8,6 +8,7 @@ const HeaderView = () => `
       <a href="/timer">Timer</a> 
       <a href="/pomodoro">Pomodoro</a>
     </nav>
+    <div class="sound_status">🔊</div>
   </header>
 `;
 

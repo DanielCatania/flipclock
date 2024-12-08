@@ -50,3 +50,18 @@
    transition: 0.5s;
    color: #b56d5b;
  }
+
+ .sound_status {
+   width: 20px;
+   font-size: 20px;
+
+   position: absolute;
+
+   bottom: -20px;
+   left: 0;
+   right: 0;
+   margin: 0 auto;
+   margin-right: 50%;
+
+   cursor: pointer;
+ }
