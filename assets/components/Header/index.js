@@ -1,4 +1,5 @@
 import addsMouseVisibility from "../../scripts/utils/addsMouseVisibility.js";
+import Tooltip from "../Tooltip/index.js";
 
 const HeaderView = () => `
   <link rel="stylesheet" href="/assets/components/Header/style.css">
@@ -8,7 +9,10 @@ const HeaderView = () => `
       <a href="/timer">Timer</a> 
       <a href="/pomodoro">Pomodoro</a>
     </nav>
-    <div class="sound_status">🔊</div>
+    <div class="sound_status tooltip__container">
+      🔊
+      ${Tooltip("Desabilitar som de flip")}
+    </div>
   </header>
 `;
 
